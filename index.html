@@ -1194,6 +1194,387 @@
             white-space: pre-line;
             line-height: 1.8;
         }
+
+        /* Ranking Section */
+        .ranking-section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+        
+        .ranking-section.collapsed .ranking-content {
+            display: none;
+        }
+        
+        .ranking-section.collapsed .ranking-header {
+            margin-bottom: 0;
+        }
+        
+        .ranking-toggle-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 5px 10px;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ranking-toggle-btn:hover {
+            color: var(--text-primary);
+        }
+        
+        .ranking-section.collapsed .ranking-toggle-btn {
+            transform: rotate(-90deg);
+        }
+        
+        .ranking-header-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ranking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .ranking-header h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .ranking-controls {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .ranking-select {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        .ranking-tab-btn {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ranking-tab-btn:hover {
+            background: var(--bg-hover);
+            color: var(--text-primary);
+        }
+
+        .ranking-tab-btn.active {
+            background: var(--accent-blue);
+            color: white;
+            border-color: var(--accent-blue);
+        }
+
+        .ranking-refresh-btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            border: none;
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .ranking-refresh-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 158, 11, 0.4);
+        }
+
+        .ranking-update-time {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .ranking-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+
+        .ranking-table-container {
+            overflow-x: auto;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .ranking-table th,
+        .ranking-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .ranking-table th {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: 0.85rem;
+            position: sticky;
+            top: 0;
+        }
+
+        .ranking-table td {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .ranking-table tr:hover {
+            background: var(--bg-hover);
+        }
+
+        .ranking-rank {
+            display: inline-flex;
+            width: 28px;
+            height: 28px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        .ranking-rank.top3 {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: #000;
+        }
+
+        .ranking-rank.normal {
+            background: var(--bg-hover);
+            color: var(--text-secondary);
+        }
+
+        /* Elliott Wave Section */
+        .elliott-section {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .elliott-overview {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .elliott-card {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .elliott-card.main-wave {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .elliott-card-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .elliott-icon {
+            font-size: 1.2rem;
+        }
+
+        .elliott-wave-position {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+        }
+
+        .elliott-wave-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .elliott-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .elliott-chart-container {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .elliott-chart-container h4 {
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .elliott-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .elliott-theory-box,
+        .elliott-analysis-box,
+        .fibonacci-box,
+        .wave-prediction-box {
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+        }
+
+        .elliott-theory-box h4,
+        .elliott-analysis-box h4,
+        .fibonacci-box h4,
+        .wave-prediction-box h4 {
+            color: var(--accent-yellow);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .wave-rules {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .wave-rule {
+            padding: 12px;
+            background: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .wave-label {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .wave-label.impulse {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--accent-up);
+        }
+
+        .wave-label.corrective {
+            background: rgba(16, 185, 129, 0.2);
+            color: var(--accent-down);
+        }
+
+        .wave-rule p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .fibonacci-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .fib-level {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: var(--bg-card);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .fib-level.important {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .fib-level.extension {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .fib-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .fib-price {
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+        }
+
+        #elliottAnalysis, #wavePrediction {
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        #elliottAnalysis strong, #wavePrediction strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .elliott-card.main-wave {
+                grid-column: span 1;
+            }
+            
+            .ranking-controls {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .ranking-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1310,8 +1691,56 @@
                 <button class="tab-btn" onclick="showTab('technical')">📊 技術分析</button>
                 <button class="tab-btn" onclick="showTab('kd-chart')">📉 KD 線圖</button>
                 <button class="tab-btn" onclick="showTab('macd-chart')">📊 MACD 圖表</button>
+                <button class="tab-btn" onclick="showTab('elliott-wave')">🌊 波浪理論</button>
                 <button class="tab-btn" onclick="showTab('alerts')">🚨 智能警示</button>
+                <button class="tab-btn" onclick="showTab('institutional')">📊 籌碼面</button>
                 <button class="tab-btn" onclick="showTab('ai-report')">🤖 AI 分析報告</button>
+            </div>
+
+            <!-- 排行榜區塊（獨立於個股分析） -->
+            <div class="ranking-section" id="rankingSection">
+                <div class="ranking-header">
+                    <div class="ranking-header-left">
+                        <button class="ranking-toggle-btn" onclick="toggleRankingSection()" title="展開/收合">▼</button>
+                        <h3>🏆 台股排行榜</h3>
+                    </div>
+                    <div class="ranking-controls">
+                        <select id="rankingMarket" class="ranking-select">
+                            <option value="tse">上市</option>
+                            <option value="otc">上櫃</option>
+                        </select>
+                        <button class="ranking-tab-btn active" data-type="gainers" onclick="switchRankingType('gainers')">📈 漲幅</button>
+                        <button class="ranking-tab-btn" data-type="losers" onclick="switchRankingType('losers')">📉 跌幅</button>
+                        <button class="ranking-tab-btn" data-type="volume" onclick="switchRankingType('volume')">📊 成交量</button>
+                        <button class="ranking-tab-btn" data-type="value" onclick="switchRankingType('value')">💰 成交值</button>
+                        <button class="ranking-refresh-btn" onclick="fetchRankingData()">🔄 更新</button>
+                    </div>
+                </div>
+                <div class="ranking-content">
+                    <div class="ranking-update-time" id="rankingUpdateTime">點擊「更新」獲取最新排行榜</div>
+                    <div class="ranking-loading" id="rankingLoading" style="display: none;">
+                        <div class="spinner-small"></div>
+                        <span>正在載入排行榜...</span>
+                    </div>
+                    <div class="ranking-table-container" id="rankingTableContainer" style="display: none;">
+                        <table class="ranking-table">
+                            <thead>
+                                <tr>
+                                    <th>排名</th>
+                                    <th>代號</th>
+                                    <th>名稱</th>
+                                    <th>成交價</th>
+                                    <th>漲跌</th>
+                                    <th>漲跌幅</th>
+                                    <th id="rankingValueHeader">成交量(張)</th>
+                                    <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody id="rankingBody">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <!-- Tab: Overview -->
@@ -1581,6 +2010,79 @@
                 </div>
             </div>
 
+            <!-- Tab: Institutional (籌碼面) -->
+            <div class="tab-content" id="tab-institutional">
+                <div class="institutional-section">
+                    <h3 class="chart-title">📊 籌碼面綜合評估</h3>
+                    
+                    <!-- 籌碼概覽卡片 -->
+                    <div class="cards-grid" style="margin-bottom: 20px;">
+                        <div class="card" style="background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(59, 130, 246, 0.05));">
+                            <div class="card-header">
+                                <span class="card-title">外資買賣超</span>
+                                <span class="card-icon">🏦</span>
+                            </div>
+                            <div class="card-value" id="foreignNet" style="font-size: 1.8rem;">+0 張</div>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(239, 68, 68, 0.05));">
+                            <div class="card-header">
+                                <span class="card-title">投信買賣超</span>
+                                <span class="card-icon">📈</span>
+                            </div>
+                            <div class="card-value" id="investmentNet" style="font-size: 1.8rem;">+0 張</div>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(168, 85, 247, 0.05));">
+                            <div class="card-header">
+                                <span class="card-title">自營商買賣超</span>
+                                <span class="card-icon">🏢</span>
+                            </div>
+                            <div class="card-value" id="dealerNet" style="font-size: 1.8rem;">+0 張</div>
+                        </div>
+                        <div class="card" style="background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05));">
+                            <div class="card-header">
+                                <span class="card-title">三大法人合計</span>
+                                <span class="card-icon">📊</span>
+                            </div>
+                            <div class="card-value" id="totalInstitutional" style="font-size: 1.8rem;">+0 張</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 三大法人進出走勢圖 -->
+                    <div class="chart-container">
+                        <h3 class="chart-title">🏛️ 三大法人進出走勢</h3>
+                        <div class="chart-wrapper">
+                            <canvas id="institutionalChart"></canvas>
+                        </div>
+                        <div class="chart-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #3b82f6;"></div>
+                                <span>外資</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #ef4444;"></div>
+                                <span>投信</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #a855f7;"></div>
+                                <span>自營商</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #f59e0b;"></div>
+                                <span>股價</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 籌碼分析說明 -->
+                    <div class="analysis-card" style="margin-top: 20px;">
+                        <h4 style="margin-bottom: 15px; color: var(--text-primary);">📝 籌碼分析說明</h4>
+                        <div id="institutionalAnalysis" style="line-height: 1.8; color: var(--text-secondary);">
+                            <p>載入股票數據後顯示籌碼分析...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- Tab: AI Report -->
             <div class="tab-content" id="tab-ai-report">
                 <div class="ai-analysis">
@@ -1592,6 +2094,120 @@
                         <p style="color: var(--text-secondary); text-align: center; padding: 40px;">
                             AI 分析報告將在數據載入後自動生成...
                         </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Elliott Wave Theory -->
+            <div class="tab-content" id="tab-elliott-wave">
+                <div class="elliott-section">
+                    <h3 class="chart-title">🌊 艾略特波浪理論分析</h3>
+                    
+                    <div class="elliott-overview">
+                        <div class="elliott-card main-wave">
+                            <div class="elliott-card-header">
+                                <span class="elliott-icon">🌊</span>
+                                <span>當前波浪位置</span>
+                            </div>
+                            <div class="elliott-wave-position" id="currentWavePosition">-</div>
+                            <div class="elliott-wave-desc" id="currentWaveDesc">載入股票數據後顯示</div>
+                        </div>
+                        <div class="elliott-card">
+                            <div class="elliott-card-header">
+                                <span class="elliott-icon">📈</span>
+                                <span>趨勢方向</span>
+                            </div>
+                            <div class="elliott-value" id="elliottTrend">-</div>
+                        </div>
+                        <div class="elliott-card">
+                            <div class="elliott-card-header">
+                                <span class="elliott-icon">🎯</span>
+                                <span>波浪強度</span>
+                            </div>
+                            <div class="elliott-value" id="elliottStrength">-</div>
+                        </div>
+                        <div class="elliott-card">
+                            <div class="elliott-card-header">
+                                <span class="elliott-icon">📊</span>
+                                <span>費波納契位置</span>
+                            </div>
+                            <div class="elliott-value" id="fibonacciLevel">-</div>
+                        </div>
+                    </div>
+
+                    <div class="elliott-chart-container">
+                        <h4>📉 波浪結構圖</h4>
+                        <div class="chart-wrapper" style="height: 350px;">
+                            <canvas id="elliottChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="elliott-details">
+                        <div class="elliott-theory-box">
+                            <h4>📚 波浪理論說明</h4>
+                            <div class="wave-rules">
+                                <div class="wave-rule">
+                                    <span class="wave-label impulse">推動浪 (1-2-3-4-5)</span>
+                                    <p>順應主趨勢方向，由5個子浪組成。第3浪通常最長且最強勁。</p>
+                                </div>
+                                <div class="wave-rule">
+                                    <span class="wave-label corrective">修正浪 (A-B-C)</span>
+                                    <p>逆主趨勢方向，由3個子浪組成。用於修正前一個推動浪。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="elliott-analysis-box">
+                            <h4>🔍 當前分析</h4>
+                            <div id="elliottAnalysis">
+                                <p style="color: var(--text-secondary);">請先載入股票數據...</p>
+                            </div>
+                        </div>
+
+                        <div class="fibonacci-box">
+                            <h4>📐 費波納契回撤/延伸水平</h4>
+                            <div class="fibonacci-levels" id="fibonacciLevels">
+                                <div class="fib-level">
+                                    <span class="fib-label">0%</span>
+                                    <span class="fib-price" id="fib0">-</span>
+                                </div>
+                                <div class="fib-level">
+                                    <span class="fib-label">23.6%</span>
+                                    <span class="fib-price" id="fib236">-</span>
+                                </div>
+                                <div class="fib-level">
+                                    <span class="fib-label">38.2%</span>
+                                    <span class="fib-price" id="fib382">-</span>
+                                </div>
+                                <div class="fib-level important">
+                                    <span class="fib-label">50%</span>
+                                    <span class="fib-price" id="fib50">-</span>
+                                </div>
+                                <div class="fib-level important">
+                                    <span class="fib-label">61.8%</span>
+                                    <span class="fib-price" id="fib618">-</span>
+                                </div>
+                                <div class="fib-level">
+                                    <span class="fib-label">78.6%</span>
+                                    <span class="fib-price" id="fib786">-</span>
+                                </div>
+                                <div class="fib-level">
+                                    <span class="fib-label">100%</span>
+                                    <span class="fib-price" id="fib100">-</span>
+                                </div>
+                                <div class="fib-level extension">
+                                    <span class="fib-label">161.8%</span>
+                                    <span class="fib-price" id="fib1618">-</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="wave-prediction-box">
+                            <h4>🔮 波浪預測</h4>
+                            <div id="wavePrediction">
+                                <p style="color: var(--text-secondary);">請先載入股票數據...</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1607,6 +2223,7 @@
         let technicalIndicators = {};
         let charts = {};
         let institutionalData = null;
+        let institutionalHistory = [];
         let watchlist = []; // 自選股清單
 
         // Market selection
@@ -1793,12 +2410,21 @@
         // 獲取單一股票最新報價 - 使用官方即時報價 API
         async function fetchLatestQuote(code, market) {
             try {
-                // 使用證交所即時報價 API
+                // 使用證交所即時報價 API（盤中即時）
                 // 上市: tse_代號.tw, 上櫃: otc_代號.tw
                 const exch = market === 'tpex' ? 'otc' : 'tse';
-                const url = `https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=${exch}_${code}.tw&json=1&delay=0`;
+                const url = `https://mis.twse.com.tw/stock/api/getStockInfo.jsp?ex_ch=${exch}_${code}.tw&json=1&delay=0&_=${Date.now()}`;
                 
-                const data = await fetchWithProxy(url);
+                // 先嘗試直接請求（mis.twse.com.tw 支援 CORS）
+                let data = null;
+                try {
+                    const response = await fetchWithTimeout(url, 5000);
+                    data = await response.json();
+                } catch (directError) {
+                    console.log('Direct request failed, trying proxy...', directError);
+                    // 若直接請求失敗，嘗試使用 proxy
+                    data = await fetchWithProxy(url);
+                }
                 
                 if (data && data.msgArray && data.msgArray.length > 0) {
                     const stock = data.msgArray[0];
@@ -1807,10 +2433,12 @@
                     // z: 成交價（可能是 "-" 表示無成交）
                     // y: 昨收, n: 股票名稱, c: 股票代號
                     // v: 成交量(張), o: 開盤, h: 最高, l: 最低
-                    // pz: 試撮價
+                    // pz: 試撮價, tv: 當盤成交量, d: 日期, t: 時間
                     
                     const name = stock.n || code;
                     const prevClose = parseFloat(stock.y) || 0;
+                    const tradeDate = stock.d || ''; // 交易日期 yyyymmdd
+                    const tradeTime = stock.t || ''; // 交易時間 hh:mm:ss
                     
                     // 成交價：優先用 z，若無則用試撮價 pz，再無則用昨收
                     let currentPrice = 0;
@@ -1822,7 +2450,7 @@
                         currentPrice = prevClose; // 無成交時顯示昨收
                     }
                     
-                    // 成交量（張）
+                    // 成交量（張）- 累積成交量
                     const volumeInLots = parseInt(stock.v) || 0;
                     
                     if (prevClose > 0) {
@@ -1843,12 +2471,15 @@
                             changePercent: changePercent,
                             volume: volumeInLots, // 保持「張」為單位
                             prevClose: prevClose,
-                            hasTraded: stock.z && stock.z !== '-'
+                            hasTraded: stock.z && stock.z !== '-',
+                            tradeDate: tradeDate,
+                            tradeTime: tradeTime
                         };
                     }
                 }
                 
-                // 如果官方 API 失敗，嘗試 Yahoo Finance 作為備用
+                // 如果官方即時 API 失敗，嘗試 Yahoo Finance 作為備用
+                console.log(`Official API returned no data for ${code}, trying Yahoo...`);
                 return await fetchLatestQuoteYahoo(code, market);
                 
             } catch (e) {
@@ -1858,11 +2489,12 @@
             }
         }
         
-        // Yahoo Finance 備用報價
+        // Yahoo Finance 備用報價（提供當日即時數據）
         async function fetchLatestQuoteYahoo(code, market) {
             try {
                 const symbol = market === 'tpex' ? `${code}.TWO` : `${code}.TW`;
-                const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1d&range=5d`;
+                // 使用較短的 range 和 interval 取得更即時的數據
+                const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?interval=1m&range=1d&_=${Date.now()}`;
                 
                 const data = await fetchWithProxy(url);
                 
@@ -1870,27 +2502,51 @@
                     const result = data.chart.result[0];
                     const meta = result.meta;
                     const quotes = result.indicators.quote[0];
-                    const len = quotes.close.length;
+                    const len = quotes.close ? quotes.close.length : 0;
                     
+                    // 取最後一筆有效數據
                     let lastIndex = len - 1;
                     while (lastIndex >= 0 && (quotes.close[lastIndex] === null || isNaN(quotes.close[lastIndex]))) {
                         lastIndex--;
                     }
                     
-                    if (lastIndex < 0) return null;
+                    if (lastIndex < 0) {
+                        // 如果當日無數據，用 meta 中的資訊
+                        const currentPrice = meta.regularMarketPrice || 0;
+                        const prevClose = meta.chartPreviousClose || meta.previousClose || currentPrice;
+                        
+                        if (currentPrice > 0) {
+                            return {
+                                name: code,
+                                price: currentPrice,
+                                change: currentPrice - prevClose,
+                                changePercent: prevClose > 0 ? ((currentPrice - prevClose) / prevClose) * 100 : 0,
+                                volume: Math.round((meta.regularMarketVolume || 0) / 1000),
+                                prevClose: prevClose,
+                                hasTraded: true
+                            };
+                        }
+                        return null;
+                    }
                     
                     const currentPrice = quotes.close[lastIndex];
                     const prevClose = meta.chartPreviousClose || meta.previousClose || currentPrice;
                     const change = currentPrice - prevClose;
                     const changePercent = prevClose > 0 ? (change / prevClose) * 100 : 0;
-                    const volume = Math.round((quotes.volume[lastIndex] || 0) / 1000); // 轉成張
+                    
+                    // 計算當日總成交量
+                    let totalVolume = 0;
+                    for (let i = 0; i <= lastIndex; i++) {
+                        totalVolume += (quotes.volume[i] || 0);
+                    }
+                    const volumeInLots = Math.round(totalVolume / 1000); // 轉成張
                     
                     return {
                         name: code, // Yahoo 無法取得中文名
                         price: currentPrice,
                         change: change,
                         changePercent: changePercent,
-                        volume: volume,
+                        volume: volumeInLots,
                         prevClose: prevClose,
                         hasTraded: true
                     };
@@ -1917,6 +2573,12 @@
                 const percentDisplay = item.error ? '--' : `${changeSymbol}${parseFloat(item.changePercent).toFixed(2)}%`;
                 const volumeDisplay = item.error ? '--' : formatVolume(item.volume);
                 
+                // 顯示交易狀態
+                let statusIndicator = '';
+                if (!item.error && item.hasTraded === false) {
+                    statusIndicator = ' <span style="color: var(--text-muted); font-size: 0.75rem;">(試撮)</span>';
+                }
+                
                 return `
                     <tr>
                         <td>
@@ -1926,7 +2588,7 @@
                         <td>
                             <span class="tag-market ${item.market === 'tpex' ? 'tpex' : ''}">${item.market === 'twse' ? '上市' : '上櫃'}</span>
                         </td>
-                        <td class="${priceClass}">${priceDisplay}</td>
+                        <td class="${priceClass}">${priceDisplay}${statusIndicator}</td>
                         <td class="price-flat">${prevCloseDisplay}</td>
                         <td class="${priceClass}">${changeDisplay}</td>
                         <td class="${priceClass}">${percentDisplay}</td>
@@ -2044,6 +2706,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initializeDates();
             loadWatchlist(); // 載入自選股
+            initRankingState(); // 初始化排行榜摺疊狀態
             
             document.getElementById('stockCode').addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') startAnalysis();
@@ -2477,43 +3140,184 @@
                 investment: 0,
                 dealer: 0
             };
+            institutionalHistory = [];
 
             try {
-                const today = new Date();
+                // 獲取多天的三大法人數據
+                const dates = getRecentTradingDates(20); // 獲取最近20個交易日
                 
-                if (currentMarket === 'twse') {
-                    // 上市股票三大法人
-                    const dateStr = `${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, '0')}${String(today.getDate()).padStart(2, '0')}`;
-                    const url = `https://www.twse.com.tw/rwd/zh/fund/T86?date=${dateStr}&selectType=ALLBUT0999&response=json`;
-                    const data = await fetchWithProxy(url);
+                for (const dateStr of dates) {
+                    let dayData = null;
                     
-                    if (data.stat === 'OK' && data.data) {
-                        const stockRow = data.data.find(row => row[0].trim() === stockCode);
-                        if (stockRow) {
-                            institutionalData.foreign = parseInt(stockRow[4].replace(/,/g, '')) || 0;
-                            institutionalData.investment = parseInt(stockRow[10].replace(/,/g, '')) || 0;
-                            institutionalData.dealer = parseInt(stockRow[11].replace(/,/g, '')) || 0;
-                        }
+                    if (currentMarket === 'twse') {
+                        dayData = await fetchTWSEInstitutional(stockCode, dateStr);
+                    } else {
+                        dayData = await fetchTPExInstitutional(stockCode, dateStr);
                     }
-                } else {
-                    // 上櫃股票三大法人
-                    const rocYear = today.getFullYear() - 1911;
-                    const dateStr = `${rocYear}/${String(today.getMonth() + 1).padStart(2, '0')}/${String(today.getDate()).padStart(2, '0')}`;
-                    const url = `https://www.tpex.org.tw/web/stock/3insti/daily_trade/3itrade_hedge_result.php?l=zh-tw&d=${dateStr}&se=EW&t=D`;
-                    const data = await fetchWithProxy(url);
                     
-                    if (data && data.aaData) {
-                        const stockRow = data.aaData.find(row => row[0].trim() === stockCode);
-                        if (stockRow) {
-                            // TPEx format: [代號, 名稱, 外資買, 外資賣, 外資淨, 投信買, 投信賣, 投信淨, 自營買, 自營賣, 自營淨, 三大法人淨]
-                            institutionalData.foreign = parseInt(stockRow[4].replace(/,/g, '')) || 0;
-                            institutionalData.investment = parseInt(stockRow[7].replace(/,/g, '')) || 0;
-                            institutionalData.dealer = parseInt(stockRow[10].replace(/,/g, '')) || 0;
-                        }
+                    if (dayData) {
+                        // 找到對應的股價
+                        const priceData = stockData.find(d => d.date === dayData.date);
+                        const price = priceData ? priceData.close : 0;
+                        
+                        institutionalHistory.push({
+                            date: dayData.date,
+                            price: price,
+                            foreign: dayData.foreignNet,
+                            investment: dayData.trustNet,
+                            dealer: dayData.dealerNet
+                        });
                     }
+                    
+                    // 加入延遲避免請求過快
+                    await new Promise(resolve => setTimeout(resolve, 100));
                 }
+                
+                // 排序（從舊到新）
+                institutionalHistory.sort((a, b) => a.date.localeCompare(b.date));
+                
+                // 設定最新一天的數據
+                if (institutionalHistory.length > 0) {
+                    const latest = institutionalHistory[institutionalHistory.length - 1];
+                    institutionalData.foreign = latest.foreign;
+                    institutionalData.investment = latest.investment;
+                    institutionalData.dealer = latest.dealer;
+                }
+                
+                console.log('Institutional history loaded:', institutionalHistory.length, 'days');
+                
             } catch (e) {
                 console.log('Error fetching institutional data:', e);
+            }
+        }
+        
+        function getRecentTradingDates(days) {
+            // 從 stockData 獲取實際交易日
+            if (stockData.length > 0) {
+                return stockData.slice(-days).map(d => d.date);
+            }
+            return [];
+        }
+        
+        // 獲取上市股票三大法人資料
+        // TWSE T86 API 欄位順序 (2024年後更新版):
+        // 0:證券代號, 1:證券名稱
+        // 2:外陸資買進股數(不含外資自營商), 3:外陸資賣出股數, 4:外陸資買賣超股數
+        // 5:外資自營商買進股數, 6:外資自營商賣出股數, 7:外資自營商買賣超股數
+        // 8:外資及陸資買進股數, 9:外資及陸資賣出股數, 10:外資及陸資買賣超股數 (新增合計欄位)
+        // 11:投信買進股數, 12:投信賣出股數, 13:投信買賣超股數
+        // 14:自營商買進(自行買賣), 15:自營商賣出(自行買賣), 16:自營商買賣超(自行買賣)
+        // 17:自營商買進(避險), 18:自營商賣出(避險), 19:自營商買賣超(避險)
+        // 20:自營商買賣超股數(合計)
+        // 21:三大法人買賣超股數
+        async function fetchTWSEInstitutional(stockCode, date) {
+            try {
+                // 將日期轉換為 API 格式 (YYYYMMDD)
+                const dateStr = date.replace(/\//g, '').replace(/-/g, '');
+                const url = `https://www.twse.com.tw/rwd/zh/fund/T86?date=${dateStr}&selectType=ALLBUT0999&response=json`;
+                const data = await fetchWithProxy(url);
+                
+                if (data && data.stat === 'OK' && data.data) {
+                    const stockRow = data.data.find(row => row[0].trim() === stockCode);
+                    if (stockRow) {
+                        // 解析數值，處理特殊減號和逗號
+                        const parseNum = (str) => {
+                            if (!str) return 0;
+                            let cleaned = String(str).replace(/,/g, '').replace(/−/g, '-');
+                            return parseInt(cleaned) || 0;
+                        };
+                        
+                        // 檢測 API 版本
+                        const isNewFormat = stockRow.length >= 22;
+                        
+                        // 外資 = 外陸資(不含外資自營商) + 外資自營商
+                        const foreignNet = parseNum(stockRow[4]) + parseNum(stockRow[7]);
+                        
+                        let trustNet, dealerNet;
+                        if (isNewFormat) {
+                            // 新版 API (22欄位)
+                            trustNet = parseNum(stockRow[13]);  // 投信買賣超
+                            dealerNet = parseNum(stockRow[20]); // 自營商合計買賣超
+                        } else {
+                            // 舊版 API
+                            trustNet = parseNum(stockRow[10]);
+                            dealerNet = parseNum(stockRow[11]);
+                        }
+                        
+                        // 轉換為張數（股數 / 1000）
+                        return {
+                            date: date,
+                            foreignNet: Math.round(foreignNet / 1000),
+                            trustNet: Math.round(trustNet / 1000),
+                            dealerNet: Math.round(dealerNet / 1000)
+                        };
+                    }
+                }
+                return null;
+            } catch (e) {
+                console.log('TWSE institutional fetch error:', e);
+                return null;
+            }
+        }
+        
+        // 獲取上櫃股票三大法人資料
+        // TPEX 3itrade_hedge_result API 欄位順序:
+        // 0:股票代號, 1:股票名稱
+        // 2:外資及陸資(不含外資自營商)-買進, 3:賣出, 4:買賣超
+        // 5:外資自營商-買進, 6:賣出, 7:買賣超
+        // 8:投信-買進, 9:賣出, 10:買賣超
+        // 11:自營商(自行買賣)-買進, 12:賣出, 13:買賣超
+        // 14:自營商(避險)-買進, 15:賣出, 16:買賣超
+        // 17:自營商合計買賣超, 18:三大法人買賣超合計
+        async function fetchTPExInstitutional(stockCode, date) {
+            try {
+                // 轉換為民國年格式
+                const dateParts = date.split(/[\/\-]/);
+                let year, month, day;
+                
+                if (dateParts[0].length === 4) {
+                    // 西元年格式 2024/01/23 或 2024-01-23
+                    year = parseInt(dateParts[0]) - 1911;
+                    month = dateParts[1];
+                    day = dateParts[2];
+                } else {
+                    // 可能已經是民國年
+                    year = parseInt(dateParts[0]);
+                    month = dateParts[1];
+                    day = dateParts[2];
+                }
+                
+                const dateStr = `${year}/${month.padStart(2, '0')}/${day.padStart(2, '0')}`;
+                const url = `https://www.tpex.org.tw/web/stock/3insti/daily_trade/3itrade_hedge_result.php?l=zh-tw&o=json&se=EW&t=D&d=${dateStr}&s=0,asc`;
+                const data = await fetchWithProxy(url);
+                
+                if (data && data.aaData) {
+                    const stockRow = data.aaData.find(row => row[0].trim() === stockCode);
+                    if (stockRow) {
+                        const parseNum = (val) => {
+                            if (val === null || val === undefined) return 0;
+                            let cleaned = String(val).replace(/,/g, '').replace(/−/g, '-');
+                            return parseInt(cleaned) || 0;
+                        };
+                        
+                        // 外資 = 外陸資(不含外資自營商) + 外資自營商
+                        const foreignNet = parseNum(stockRow[4]) + parseNum(stockRow[7]);
+                        const trustNet = parseNum(stockRow[10]);  // 投信買賣超
+                        const dealerNet = parseNum(stockRow[17]); // 自營商合計買賣超
+                        
+                        // 轉換為張數（股數 / 1000）
+                        return {
+                            date: date,
+                            foreignNet: Math.round(foreignNet / 1000),
+                            trustNet: Math.round(trustNet / 1000),
+                            dealerNet: Math.round(dealerNet / 1000)
+                        };
+                    }
+                }
+                return null;
+            } catch (e) {
+                console.log('TPEx institutional fetch error:', e);
+                return null;
             }
         }
 
@@ -3122,6 +3926,19 @@
 
             // Generate AI report
             generateAIReport();
+            
+            // 更新籌碼面
+            updateInstitutionalDisplay();
+            
+            // 預先計算波浪理論
+            if (stockData.length >= 30) {
+                try {
+                    window.elliottWaveData = detectElliottWaves(stockData);
+                    console.log('Elliott Wave prepared:', window.elliottWaveData.currentWave);
+                } catch (e) {
+                    console.error('Elliott Wave error:', e);
+                }
+            }
         }
 
         function calculateTechScore() {
@@ -3506,6 +4323,203 @@
             });
         }
 
+        // ===== 籌碼面分析 =====
+        function drawInstitutionalChart() {
+            if (!institutionalHistory || institutionalHistory.length === 0) {
+                document.getElementById('institutionalAnalysis').innerHTML = '<p style="color: var(--accent-yellow);">⚠️ 籌碼數據暫無法取得，請稍後再試。</p>';
+                return;
+            }
+            
+            const ctx = document.getElementById('institutionalChart').getContext('2d');
+            
+            if (charts.institutionalChart) {
+                charts.institutionalChart.destroy();
+            }
+            
+            const labels = institutionalHistory.map(d => d.date.substring(5));
+            const foreignData = institutionalHistory.map(d => d.foreign / 1000); // 轉換為千張
+            const investmentData = institutionalHistory.map(d => d.investment / 1000);
+            const dealerData = institutionalHistory.map(d => d.dealer / 1000);
+            const priceData = institutionalHistory.map(d => d.price);
+            
+            charts.institutionalChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: '外資 (千張)',
+                            data: foreignData,
+                            backgroundColor: foreignData.map(v => v >= 0 ? 'rgba(59, 130, 246, 0.8)' : 'rgba(59, 130, 246, 0.4)'),
+                            borderColor: '#3b82f6',
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '投信 (千張)',
+                            data: investmentData,
+                            backgroundColor: investmentData.map(v => v >= 0 ? 'rgba(239, 68, 68, 0.8)' : 'rgba(239, 68, 68, 0.4)'),
+                            borderColor: '#ef4444',
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '自營商 (千張)',
+                            data: dealerData,
+                            backgroundColor: dealerData.map(v => v >= 0 ? 'rgba(168, 85, 247, 0.8)' : 'rgba(168, 85, 247, 0.4)'),
+                            borderColor: '#a855f7',
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: '股價',
+                            data: priceData,
+                            type: 'line',
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            pointRadius: 3,
+                            pointBackgroundColor: '#f59e0b',
+                            yAxisID: 'y1',
+                            tension: 0.1
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: { color: '#94a3b8' }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1a2332',
+                            titleColor: '#f1f5f9',
+                            bodyColor: '#94a3b8'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(45, 58, 79, 0.5)' },
+                            ticks: { color: '#64748b', maxTicksLimit: 12 }
+                        },
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            grid: { color: 'rgba(45, 58, 79, 0.5)' },
+                            ticks: { color: '#64748b' },
+                            title: {
+                                display: true,
+                                text: '買賣超 (千張)',
+                                color: '#64748b'
+                            }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            grid: { drawOnChartArea: false },
+                            ticks: { color: '#f59e0b' },
+                            title: {
+                                display: true,
+                                text: '股價',
+                                color: '#f59e0b'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        function updateInstitutionalDisplay() {
+            // 更新當日買賣超卡片
+            if (institutionalData) {
+                const foreign = institutionalData.foreign || 0;
+                const investment = institutionalData.investment || 0;
+                const dealer = institutionalData.dealer || 0;
+                const total = foreign + investment + dealer;
+                
+                const foreignEl = document.getElementById('foreignNet');
+                const investmentEl = document.getElementById('investmentNet');
+                const dealerEl = document.getElementById('dealerNet');
+                const totalEl = document.getElementById('totalInstitutional');
+                
+                foreignEl.textContent = `${foreign >= 0 ? '+' : ''}${foreign.toLocaleString()} 張`;
+                foreignEl.style.color = foreign >= 0 ? 'var(--accent-up)' : 'var(--accent-down)';
+                
+                investmentEl.textContent = `${investment >= 0 ? '+' : ''}${investment.toLocaleString()} 張`;
+                investmentEl.style.color = investment >= 0 ? 'var(--accent-up)' : 'var(--accent-down)';
+                
+                dealerEl.textContent = `${dealer >= 0 ? '+' : ''}${dealer.toLocaleString()} 張`;
+                dealerEl.style.color = dealer >= 0 ? 'var(--accent-up)' : 'var(--accent-down)';
+                
+                totalEl.textContent = `${total >= 0 ? '+' : ''}${total.toLocaleString()} 張`;
+                totalEl.style.color = total >= 0 ? 'var(--accent-up)' : 'var(--accent-down)';
+                
+                // 生成籌碼分析文字
+                generateInstitutionalAnalysis(foreign, investment, dealer, total);
+            }
+            
+            // 繪製圖表
+            drawInstitutionalChart();
+        }
+        
+        function generateInstitutionalAnalysis(foreign, investment, dealer, total) {
+            let html = '';
+            
+            // 外資分析
+            if (foreign > 0) {
+                html += `<p>🏦 <strong>外資買超 ${foreign.toLocaleString()} 張</strong>：外資持續看好，為股價帶來支撐力道。</p>`;
+            } else if (foreign < 0) {
+                html += `<p>🏦 <strong>外資賣超 ${Math.abs(foreign).toLocaleString()} 張</strong>：外資調節持股，需留意後續動向。</p>`;
+            } else {
+                html += `<p>🏦 <strong>外資今日無買賣超</strong>：外資觀望中。</p>`;
+            }
+            
+            // 投信分析
+            if (investment > 0) {
+                html += `<p>📈 <strong>投信買超 ${investment.toLocaleString()} 張</strong>：投信持續加碼，顯示法人看好後市。</p>`;
+            } else if (investment < 0) {
+                html += `<p>📈 <strong>投信賣超 ${Math.abs(investment).toLocaleString()} 張</strong>：投信調節部位，可能獲利了結。</p>`;
+            } else {
+                html += `<p>📈 <strong>投信今日無買賣超</strong>：投信觀望中。</p>`;
+            }
+            
+            // 自營商分析
+            if (dealer > 0) {
+                html += `<p>🏢 <strong>自營商買超 ${dealer.toLocaleString()} 張</strong>：自營商進場佈局。</p>`;
+            } else if (dealer < 0) {
+                html += `<p>🏢 <strong>自營商賣超 ${Math.abs(dealer).toLocaleString()} 張</strong>：自營商調節持股。</p>`;
+            } else {
+                html += `<p>🏢 <strong>自營商今日無買賣超</strong>：自營商觀望中。</p>`;
+            }
+            
+            // 總結
+            html += '<hr style="border-color: var(--border-color); margin: 15px 0;">';
+            if (total > 0) {
+                html += `<p style="color: var(--accent-up);"><strong>📊 三大法人合計買超 ${total.toLocaleString()} 張</strong>，籌碼面偏多，有利股價上漲。</p>`;
+            } else if (total < 0) {
+                html += `<p style="color: var(--accent-down);"><strong>📊 三大法人合計賣超 ${Math.abs(total).toLocaleString()} 張</strong>，籌碼面偏空，需留意股價壓力。</p>`;
+            } else {
+                html += `<p><strong>📊 三大法人今日買賣超持平</strong>，籌碼面中性。</p>`;
+            }
+            
+            // 歷史趨勢分析
+            if (institutionalHistory && institutionalHistory.length >= 5) {
+                const recent5 = institutionalHistory.slice(-5);
+                const totalForeign = recent5.reduce((sum, d) => sum + d.foreign, 0);
+                const totalInvestment = recent5.reduce((sum, d) => sum + d.investment, 0);
+                
+                html += `<p style="margin-top: 10px; color: var(--text-secondary);">📆 近5日外資累計${totalForeign >= 0 ? '買超' : '賣超'} ${Math.abs(totalForeign).toLocaleString()} 張，投信累計${totalInvestment >= 0 ? '買超' : '賣超'} ${Math.abs(totalInvestment).toLocaleString()} 張。</p>`;
+            }
+            
+            document.getElementById('institutionalAnalysis').innerHTML = html;
+        }
+
         function updateTechnicalTable() {
             const tbody = document.getElementById('technicalBody');
             tbody.innerHTML = '';
@@ -3773,6 +4787,9 @@
             if (tabId === 'macd-chart' && charts.macdChart) {
                 charts.macdChart.update();
             }
+            if (tabId === 'elliott-wave' && stockData.length > 0) {
+                analyzeElliottWave();
+            }
         }
 
         function copyReport() {
@@ -3780,6 +4797,1002 @@
             navigator.clipboard.writeText(reportContent).then(() => {
                 alert('報告已複製到剪貼簿！');
             });
+        }
+
+        // ===== 排行榜功能 =====
+        let currentRankingType = 'gainers';
+        
+        // 摺疊/展開排行榜
+        function toggleRankingSection() {
+            const section = document.getElementById('rankingSection');
+            section.classList.toggle('collapsed');
+            
+            // 保存狀態到 localStorage
+            const isCollapsed = section.classList.contains('collapsed');
+            localStorage.setItem('ranking_collapsed', isCollapsed ? 'true' : 'false');
+        }
+        
+        // 初始化時讀取摺疊狀態
+        function initRankingState() {
+            const isCollapsed = localStorage.getItem('ranking_collapsed') === 'true';
+            if (isCollapsed) {
+                document.getElementById('rankingSection').classList.add('collapsed');
+            }
+        }
+        
+        function switchRankingType(type) {
+            currentRankingType = type;
+            document.querySelectorAll('.ranking-tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`.ranking-tab-btn[data-type="${type}"]`).classList.add('active');
+            
+            const headerMap = {
+                'gainers': '成交量(張)',
+                'losers': '成交量(張)',
+                'volume': '成交量(張)',
+                'value': '成交值(億)'
+            };
+            document.getElementById('rankingValueHeader').textContent = headerMap[type];
+            document.getElementById('rankingTableContainer').style.display = 'none';
+        }
+
+        async function fetchRankingData() {
+            const market = document.getElementById('rankingMarket').value;
+            const loading = document.getElementById('rankingLoading');
+            const tableContainer = document.getElementById('rankingTableContainer');
+            const updateTime = document.getElementById('rankingUpdateTime');
+            
+            loading.style.display = 'flex';
+            tableContainer.style.display = 'none';
+            updateTime.textContent = '⏳ 正在載入排行榜...';
+            
+            try {
+                let data = [];
+                
+                if (market === 'tse') {
+                    data = await fetchTWSERanking(currentRankingType);
+                } else {
+                    data = await fetchTPExRanking(currentRankingType);
+                }
+                
+                console.log('Ranking result:', data);
+                
+                if (data.length > 0) {
+                    renderRankingTable(data);
+                    tableContainer.style.display = 'block';
+                    const now = new Date();
+                    updateTime.textContent = '📅 更新時間: ' + now.toLocaleString('zh-TW');
+                } else {
+                    updateTime.textContent = '❌ 無法取得排行榜資料，請稍後再試';
+                }
+            } catch (error) {
+                console.error('排行榜載入失敗:', error);
+                updateTime.textContent = '❌ 載入失敗: ' + error.message;
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+
+        // 從證交所獲取上市排行榜
+        async function fetchTWSERanking(type) {
+            const datesToTry = getRecentTradeDates(5);
+            
+            for (const dateStr of datesToTry) {
+                try {
+                    console.log('Trying TWSE date:', dateStr);
+                    
+                    // 統一使用 MI_INDEX 全市場資料，自行排序
+                    const url = 'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date=' + dateStr + '&type=ALLBUT0999&response=json';
+                    const data = await fetchWithProxy(url);
+                    
+                    if (data && data.stat === 'OK' && data.tables) {
+                        const result = parseTWSEAllData(data, type);
+                        if (result.length > 0) {
+                            console.log('Found TWSE data for', dateStr, 'type:', type);
+                            return result;
+                        }
+                    }
+                } catch (e) {
+                    console.log('TWSE fetch error for', dateStr, e.message);
+                }
+            }
+            return [];
+        }
+        
+        function getRecentTradeDates(days) {
+            const dates = [];
+            let d = new Date();
+            while (dates.length < days) {
+                const dow = d.getDay();
+                if (dow !== 0 && dow !== 6) {
+                    const y = d.getFullYear();
+                    const m = String(d.getMonth() + 1).padStart(2, '0');
+                    const day = String(d.getDate()).padStart(2, '0');
+                    dates.push(y + m + day);
+                }
+                d.setDate(d.getDate() - 1);
+            }
+            return dates;
+        }
+        
+        function parseTWSEAllData(data, type) {
+            let stocks = [];
+            const pn = (v) => {
+                if (!v || v === '--') return 0;
+                return parseFloat(String(v).replace(/,/g, '').replace(/−/g, '-').replace(/[+]/g, '')) || 0;
+            };
+            
+            if (data.tables) {
+                // MI_INDEX 格式: 通常在 tables[8] 或其他位置有個股資料
+                // 欄位: 證券代號, 證券名稱, 成交股數, 成交筆數, 成交金額, 開盤價, 最高價, 最低價, 收盤價, 漲跌(+/-), 漲跌價差, 最後揭示買價, ...
+                data.tables.forEach(t => {
+                    if (t.data && t.fields && t.fields.length >= 10) {
+                        t.data.forEach(row => {
+                            const code = String(row[0] || '').trim();
+                            if (/^\d{4}$/.test(code)) {
+                                const vol = pn(row[2]);      // 成交股數
+                                const val = pn(row[4]);      // 成交金額
+                                const close = pn(row[8]);    // 收盤價
+                                const changeSign = String(row[9] || '').trim(); // +/- 符號
+                                let change = pn(row[10]);    // 漲跌價差
+                                
+                                // 處理漲跌符號
+                                if (changeSign === '-' || changeSign.includes('-')) {
+                                    change = -Math.abs(change);
+                                } else if (changeSign === '+' || changeSign.includes('+')) {
+                                    change = Math.abs(change);
+                                }
+                                
+                                const prevClose = close - change;
+                                const pct = prevClose > 0 ? (change / prevClose) * 100 : 0;
+                                
+                                if (close > 0) {
+                                    stocks.push({
+                                        code: code,
+                                        name: String(row[1] || '').trim(),
+                                        price: close,
+                                        change: change,
+                                        changePercent: pct,
+                                        volume: vol,
+                                        value: val
+                                    });
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+            
+            // 根據類型排序
+            if (type === 'gainers') {
+                stocks.sort((a, b) => b.changePercent - a.changePercent);
+            } else if (type === 'losers') {
+                stocks.sort((a, b) => a.changePercent - b.changePercent);
+            } else if (type === 'volume') {
+                stocks.sort((a, b) => b.volume - a.volume);
+            } else {
+                stocks.sort((a, b) => b.value - a.value);
+            }
+            
+            return stocks.slice(0, 20).map((s, i) => ({
+                rank: i + 1,
+                code: s.code,
+                name: s.name,
+                price: s.price.toFixed(2),
+                change: s.change,
+                changePercent: s.changePercent,
+                value: type === 'volume' 
+                    ? (s.volume / 1000).toLocaleString() + ' 張'
+                    : type === 'value'
+                    ? (s.value / 100000000).toFixed(2) + ' 億'
+                    : (s.volume / 1000).toLocaleString() + ' 張'
+            }));
+        }
+
+        // 從櫃買中心獲取上櫃排行榜  
+        async function fetchTPExRanking(type) {
+            const datesToTry = getRecentROCDates(5);
+            
+            for (const dateStr of datesToTry) {
+                try {
+                    console.log('Trying TPEx date:', dateStr);
+                    const url = 'https://www.tpex.org.tw/web/stock/aftertrading/otc_quotes_no1430/stk_wn1430_result.php?l=zh-tw&o=json&d=' + dateStr + '&se=EW';
+                    const data = await fetchWithProxy(url);
+                    
+                    if (data && data.aaData && data.aaData.length > 0) {
+                        console.log('Found TPEx data for', dateStr);
+                        return parseTPExData(data.aaData, type);
+                    }
+                } catch (e) {
+                    console.log('TPEx fetch error for', dateStr, e.message);
+                }
+            }
+            return [];
+        }
+        
+        function getRecentROCDates(days) {
+            const dates = [];
+            let d = new Date();
+            while (dates.length < days) {
+                const dow = d.getDay();
+                if (dow !== 0 && dow !== 6) {
+                    const y = d.getFullYear() - 1911;
+                    const m = String(d.getMonth() + 1).padStart(2, '0');
+                    const day = String(d.getDate()).padStart(2, '0');
+                    dates.push(y + '/' + m + '/' + day);
+                }
+                d.setDate(d.getDate() - 1);
+            }
+            return dates;
+        }
+        
+        function parseTPExData(aaData, type) {
+            const pn = (v) => {
+                if (v == null || v === '--') return 0;
+                return parseFloat(String(v).replace(/,/g, '').replace(/−/g, '-')) || 0;
+            };
+            
+            let stocks = aaData.map(row => {
+                const code = String(row[0] || '').trim();
+                const name = String(row[1] || '').trim();
+                const price = pn(row[2]);
+                const change = pn(row[3]);
+                const vol = pn(row[8]);
+                const val = pn(row[9]);
+                const prevP = price - change;
+                const pct = prevP > 0 ? (change / prevP) * 100 : 0;
+                return { code, name, price, change, changePercent: pct, volume: vol, value: val };
+            }).filter(s => /^\d{4}$/.test(s.code) && s.price > 0);
+            
+            if (type === 'gainers') stocks.sort((a, b) => b.changePercent - a.changePercent);
+            else if (type === 'losers') stocks.sort((a, b) => a.changePercent - b.changePercent);
+            else if (type === 'volume') stocks.sort((a, b) => b.volume - a.volume);
+            else stocks.sort((a, b) => b.value - a.value);
+            
+            return stocks.slice(0, 20).map((s, i) => ({
+                rank: i + 1,
+                code: s.code,
+                name: s.name,
+                price: s.price.toFixed(2),
+                change: s.change,
+                changePercent: s.changePercent,
+                value: type === 'volume' ? (s.volume / 1000).toLocaleString() + ' 張' : (s.value / 100000000).toFixed(2) + ' 億'
+            }));
+        }
+
+        function renderRankingTable(data) {
+            const tbody = document.getElementById('rankingBody');
+            tbody.innerHTML = '';
+            
+            data.forEach((item, index) => {
+                const isUp = item.change > 0;
+                const isDown = item.change < 0;
+                const colorClass = isUp ? 'color: var(--accent-up);' : (isDown ? 'color: var(--accent-down);' : '');
+                const changeSymbol = isUp ? '+' : '';
+                
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">
+                        <span class="ranking-rank ${index < 3 ? 'top3' : 'normal'}">${item.rank}</span>
+                    </td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); font-weight: 600; color: var(--accent-cyan);">${item.code}</td>
+                    <td style="padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); font-family: 'Noto Sans TC', sans-serif;">${item.name}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid var(--border-color); font-weight: 600;">${item.price}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid var(--border-color); ${colorClass} font-weight: 600;">${changeSymbol}${typeof item.change === 'number' ? item.change.toFixed(2) : item.change}</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid var(--border-color); ${colorClass} font-weight: 600;">${changeSymbol}${typeof item.changePercent === 'number' ? item.changePercent.toFixed(2) : item.changePercent}%</td>
+                    <td style="padding: 12px; text-align: right; border-bottom: 1px solid var(--border-color);">${item.value}</td>
+                    <td style="padding: 12px; text-align: center; border-bottom: 1px solid var(--border-color);">
+                        <button onclick="loadStockFromRanking('${item.code}')" style="background: var(--accent-blue); border: none; border-radius: 6px; padding: 6px 12px; color: white; cursor: pointer; font-size: 0.85rem;">📊 分析</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        function loadStockFromRanking(code) {
+            document.getElementById('stockCode').value = code;
+            // 檢測是上市還是上櫃（根據當前排行榜選擇）
+            const market = document.getElementById('rankingMarket').value === 'tse' ? 'twse' : 'tpex';
+            selectMarket(market);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            startAnalysis();
+        }
+
+        // ===== 波浪理論分析 =====
+        function analyzeElliottWave() {
+            console.log('analyzeElliottWave called, stockData length:', stockData.length);
+            
+            if (stockData.length < 30) {
+                document.getElementById('elliottAnalysis').innerHTML = '<p style="color: var(--accent-yellow);">⚠️ 請載入至少 30 筆交易日資料以進行波浪分析。</p>';
+                document.getElementById('currentWavePosition').textContent = '數據不足';
+                document.getElementById('currentWaveDesc').textContent = '請選擇更長的分析期間';
+                document.getElementById('wavePrediction').innerHTML = '<p style="color: var(--text-secondary);">需要更多數據才能進行波浪預測。</p>';
+                return;
+            }
+            
+            try {
+                const waveAnalysis = detectElliottWaves(stockData);
+                console.log('Wave analysis result:', waveAnalysis);
+                renderElliottWaveDisplay(waveAnalysis);
+                setTimeout(() => { drawElliottChart(waveAnalysis); }, 100);
+                calculateFibonacciLevels(waveAnalysis);
+            } catch (error) {
+                console.error('Elliott Wave analysis error:', error);
+                document.getElementById('elliottAnalysis').innerHTML = `<p style="color: var(--accent-yellow);">⚠️ 波浪分析發生錯誤: ${error.message}</p>`;
+            }
+        }
+        
+        function detectElliottWaves(data) {
+            const currentPrice = parseFloat(data[data.length - 1].close);
+            const recentData = data.slice(-120);
+            
+            // ===== 第一步：找出所有轉折點 =====
+            const pivots = [];
+            const windowSize = Math.max(2, Math.min(5, Math.floor(recentData.length / 25)));
+            
+            for (let i = windowSize; i < recentData.length - windowSize; i++) {
+                const closePrice = parseFloat(recentData[i].close);
+                const windowData = recentData.slice(i - windowSize, i + windowSize + 1);
+                const maxClose = Math.max(...windowData.map(d => parseFloat(d.close)));
+                const minClose = Math.min(...windowData.map(d => parseFloat(d.close)));
+                
+                if (closePrice >= maxClose && !pivots.some(p => Math.abs(p.index - i) < windowSize && p.type === 'high')) {
+                    pivots.push({ index: i, price: closePrice, type: 'high', date: recentData[i].date });
+                }
+                if (closePrice <= minClose && !pivots.some(p => Math.abs(p.index - i) < windowSize && p.type === 'low')) {
+                    pivots.push({ index: i, price: closePrice, type: 'low', date: recentData[i].date });
+                }
+            }
+            
+            // 檢查最新數據是否為近期高低點
+            const lastIdx = recentData.length - 1;
+            const lastClose = parseFloat(recentData[lastIdx].close);
+            const last10 = recentData.slice(-10);
+            const max10 = Math.max(...last10.map(d => parseFloat(d.close)));
+            const min10 = Math.min(...last10.map(d => parseFloat(d.close)));
+            
+            if (lastClose >= max10 && !pivots.some(p => p.index >= lastIdx - 2 && p.type === 'high')) {
+                pivots.push({ index: lastIdx, price: lastClose, type: 'high', date: recentData[lastIdx].date });
+            }
+            if (lastClose <= min10 && !pivots.some(p => p.index >= lastIdx - 2 && p.type === 'low')) {
+                pivots.push({ index: lastIdx, price: lastClose, type: 'low', date: recentData[lastIdx].date });
+            }
+            
+            pivots.sort((a, b) => a.index - b.index);
+            
+            // ===== 第二步：合併同類型轉折點 =====
+            const mergedPivots = [];
+            for (const pivot of pivots) {
+                if (mergedPivots.length === 0) {
+                    mergedPivots.push(pivot);
+                } else {
+                    const last = mergedPivots[mergedPivots.length - 1];
+                    if (pivot.type === last.type) {
+                        if ((pivot.type === 'high' && pivot.price > last.price) ||
+                            (pivot.type === 'low' && pivot.price < last.price)) {
+                            mergedPivots[mergedPivots.length - 1] = pivot;
+                        }
+                    } else {
+                        mergedPivots.push(pivot);
+                    }
+                }
+            }
+            
+            // ===== 第三步：過濾小波動（1.5%）=====
+            const avgPrice = recentData.reduce((s, d) => s + parseFloat(d.close), 0) / recentData.length;
+            const minSwing = avgPrice * 0.015;
+            
+            const significantPivots = [];
+            for (const pivot of mergedPivots) {
+                if (significantPivots.length === 0) {
+                    significantPivots.push(pivot);
+                } else {
+                    const last = significantPivots[significantPivots.length - 1];
+                    if (Math.abs(pivot.price - last.price) >= minSwing) {
+                        significantPivots.push(pivot);
+                    }
+                }
+            }
+            
+            // ===== 第四步：確保高低點交替 =====
+            const alternatingPivots = [];
+            for (const pivot of significantPivots) {
+                if (alternatingPivots.length === 0) {
+                    alternatingPivots.push(pivot);
+                } else {
+                    const last = alternatingPivots[alternatingPivots.length - 1];
+                    if (pivot.type !== last.type) {
+                        alternatingPivots.push(pivot);
+                    } else {
+                        if ((pivot.type === 'high' && pivot.price > last.price) ||
+                            (pivot.type === 'low' && pivot.price < last.price)) {
+                            alternatingPivots[alternatingPivots.length - 1] = pivot;
+                        }
+                    }
+                }
+            }
+            
+            console.log('Pivots found:', alternatingPivots.length, alternatingPivots.map(p => `${p.type}@${p.price.toFixed(2)}`).join('→'));
+            
+            // ===== 第五步：建構波浪 =====
+            const waves = [];
+            const recentPivots = alternatingPivots.slice(-9);
+            
+            for (let i = 1; i < recentPivots.length; i++) {
+                const prev = recentPivots[i - 1];
+                const curr = recentPivots[i];
+                waves.push({
+                    start: prev.price,
+                    end: curr.price,
+                    startDate: prev.date,
+                    endDate: curr.date,
+                    type: curr.price > prev.price ? 'up' : 'down'
+                });
+            }
+            
+            console.log('Waves built:', waves.length, waves.map(w => `${w.type}(${w.start.toFixed(2)}→${w.end.toFixed(2)})`).join(' | '));
+            
+            // ===== 第六步：標記波浪（艾略特標準序列）=====
+            // 1(↑) → 2(↓) → 3(↑) → 4(↓) → 5(↑) → A(↓) → B(↑) → C(↓)
+            const waveSequence = [
+                { label: 1, dir: 'up', impulse: true },
+                { label: 2, dir: 'down', impulse: false },
+                { label: 3, dir: 'up', impulse: true },
+                { label: 4, dir: 'down', impulse: false },
+                { label: 5, dir: 'up', impulse: true },
+                { label: 'A', dir: 'down', impulse: false },
+                { label: 'B', dir: 'up', impulse: false },
+                { label: 'C', dir: 'down', impulse: false }
+            ];
+            
+            const labeledWaves = [];
+            if (waves.length > 0) {
+                // 第一個波浪是上漲→從1開始，下跌→從2開始
+                let seqIdx = waves[0].type === 'up' ? 0 : 1;
+                
+                for (let i = 0; i < waves.length && i < 8; i++) {
+                    const w = waves[i];
+                    const seq = waveSequence[seqIdx % 8];
+                    labeledWaves.push({
+                        number: seq.label,
+                        start: w.start,
+                        end: w.end,
+                        startDate: w.startDate,
+                        endDate: w.endDate,
+                        type: w.type,
+                        isImpulse: seq.impulse
+                    });
+                    seqIdx++;
+                }
+            }
+            
+            console.log('Labeled waves:', labeledWaves.map(w => `Wave${w.number}(${w.type})`).join('→'));
+            
+            // ===== 第七步：判斷當前波浪位置 =====
+            let currentWave = '?';
+            
+            if (labeledWaves.length > 0) {
+                const lastWave = labeledWaves[labeledWaves.length - 1];
+                const lastLabel = lastWave.number;
+                const lastEnd = lastWave.end;
+                const lastStart = lastWave.start;
+                const priceChange = (currentPrice - lastEnd) / lastEnd;
+                const pricePos = currentPrice > lastEnd ? 'above' : 'below';
+                
+                console.log(`Last wave: ${lastLabel}, end: ${lastEnd.toFixed(2)}, current: ${currentPrice.toFixed(2)}, change: ${(priceChange*100).toFixed(2)}%, pos: ${pricePos}`);
+                
+                // 根據艾略特波浪理論判斷當前位置
+                if (typeof lastLabel === 'number') {
+                    switch(lastLabel) {
+                        case 1: // 第1浪結束（上漲結束）
+                            // 浪2不可能完全回撤浪1
+                            if (priceChange < -0.02) {
+                                currentWave = 2; // 進入第2浪修正
+                            } else if (priceChange > 0.03) {
+                                currentWave = 1; // 還在第1浪延續
+                            } else {
+                                currentWave = pricePos === 'below' ? 2 : 1;
+                            }
+                            break;
+                        case 2: // 第2浪結束（下跌結束）
+                            if (priceChange > 0.02) {
+                                currentWave = 3; // 進入第3浪（通常最強）
+                            } else if (priceChange < -0.03) {
+                                currentWave = 2; // 還在第2浪
+                            } else {
+                                currentWave = pricePos === 'above' ? 3 : 2;
+                            }
+                            break;
+                        case 3: // 第3浪結束（上漲結束，通常最強最長）
+                            if (priceChange < -0.02) {
+                                currentWave = 4; // 進入第4浪修正
+                            } else if (priceChange > 0.03) {
+                                currentWave = 3; // 還在第3浪
+                            } else {
+                                currentWave = pricePos === 'below' ? 4 : 3;
+                            }
+                            break;
+                        case 4: // 第4浪結束（下跌結束）
+                            // 浪4的低點不能與浪1頂點重疊
+                            if (priceChange > 0.02) {
+                                currentWave = 5; // 進入第5浪
+                            } else if (priceChange < -0.03) {
+                                currentWave = 4; // 還在第4浪
+                            } else {
+                                currentWave = pricePos === 'above' ? 5 : 4;
+                            }
+                            break;
+                        case 5: // 第5浪結束（上漲結束，市場狂熱）
+                            if (priceChange < -0.03) {
+                                currentWave = 'A'; // 開始ABC修正
+                            } else if (priceChange > 0.05) {
+                                currentWave = 1; // 新循環開始
+                            } else {
+                                currentWave = 5; // 還在第5浪
+                            }
+                            break;
+                    }
+                } else {
+                    // ABC 修正浪
+                    switch(lastLabel) {
+                        case 'A': // A浪結束（下跌結束）
+                            if (priceChange > 0.02) {
+                                currentWave = 'B'; // 反彈進入B浪
+                            } else {
+                                currentWave = 'A';
+                            }
+                            break;
+                        case 'B': // B浪結束（反彈結束，多頭陷阱）
+                            if (priceChange > 0.08) {
+                                currentWave = 1; // 新循環開始
+                            } else if (priceChange < -0.02) {
+                                currentWave = 'C'; // 進入C浪下跌
+                            } else if (priceChange > 0.03) {
+                                currentWave = 1; // 可能新循環
+                            } else {
+                                currentWave = pricePos === 'below' ? 'C' : 'B';
+                            }
+                            break;
+                        case 'C': // C浪結束（下跌結束，破壞力強）
+                            if (priceChange > 0.03) {
+                                currentWave = 1; // 新循環開始
+                            } else if (priceChange < -0.02) {
+                                currentWave = 'C'; // 還在C浪
+                            } else {
+                                currentWave = pricePos === 'above' ? 1 : 'C';
+                            }
+                            break;
+                    }
+                }
+                
+                console.log('Determined current wave:', currentWave);
+            }
+            
+            // ===== 第八步：判斷趨勢 =====
+            let trend = '盤整';
+            if (recentData.length >= 20) {
+                const startPrice = parseFloat(recentData[recentData.length - 20].close);
+                const change = (currentPrice - startPrice) / startPrice;
+                if (change > 0.05) trend = '上升趨勢';
+                else if (change < -0.05) trend = '下降趨勢';
+            }
+            
+            // ===== 第九步：波浪規則檢查 =====
+            const rules = [];
+            const w1 = labeledWaves.find(w => w.number === 1);
+            const w2 = labeledWaves.find(w => w.number === 2);
+            const w3 = labeledWaves.find(w => w.number === 3);
+            const w4 = labeledWaves.find(w => w.number === 4);
+            const w5 = labeledWaves.find(w => w.number === 5);
+            
+            // 規則1: 浪2不可能完全回撤浪1
+            if (w1 && w2) {
+                const w1Start = Math.min(w1.start, w1.end);
+                const w2End = Math.min(w2.start, w2.end);
+                rules.push({
+                    rule: '浪2不可能完全回撤浪1',
+                    valid: w2End >= w1Start * 0.99
+                });
+            }
+            
+            // 規則2: 浪3不可能是驅動浪中最短一浪
+            if (w1 && w3) {
+                const w1Len = Math.abs(w1.end - w1.start);
+                const w3Len = Math.abs(w3.end - w3.start);
+                const w5Len = w5 ? Math.abs(w5.end - w5.start) : Infinity;
+                const isW3Shortest = w3Len < w1Len && w3Len < w5Len;
+                rules.push({
+                    rule: '浪3不可能是最短推動浪',
+                    valid: !isW3Shortest
+                });
+            }
+            
+            // 規則3: 浪4的低點不能與浪1頂點重疊
+            if (w1 && w4) {
+                const w1Top = Math.max(w1.start, w1.end);
+                const w4Low = Math.min(w4.start, w4.end);
+                rules.push({
+                    rule: '浪4低點不能與浪1頂點重疊',
+                    valid: w4Low >= w1Top * 0.99
+                });
+            }
+            
+            // 計算價格變動
+            let lastWaveEnd = null;
+            let priceChangePercent = null;
+            if (labeledWaves.length > 0) {
+                lastWaveEnd = labeledWaves[labeledWaves.length - 1].end;
+                priceChangePercent = ((currentPrice - lastWaveEnd) / lastWaveEnd * 100).toFixed(2);
+            }
+            
+            // 最近5天數據
+            const recentDays = data.slice(-5).map(d => ({
+                date: d.date,
+                open: parseFloat(d.open || d.close),
+                high: parseFloat(d.high || d.close),
+                low: parseFloat(d.low || d.close),
+                close: parseFloat(d.close)
+            }));
+            
+            return {
+                waves: labeledWaves,
+                currentWave,
+                currentPrice,
+                lastWaveEnd,
+                priceChangePercent,
+                rules,
+                trend,
+                pivots: alternatingPivots.slice(-10),
+                recentDays,
+                prices: recentData.map(d => parseFloat(d.close))
+            };
+        }
+        
+        function renderElliottWaveDisplay(analysis) {
+            const displayWave = analysis.currentWave || '?';
+            
+            // 更新波浪位置
+            const wavePos = document.getElementById('currentWavePosition');
+            wavePos.textContent = `第 ${displayWave} 浪`;
+            
+            // 根據波浪類型設定顏色
+            if (typeof displayWave === 'number' && displayWave % 2 === 1) {
+                wavePos.style.color = 'var(--accent-up)'; // 推動浪 1, 3, 5
+            } else if (typeof displayWave === 'number') {
+                wavePos.style.color = 'var(--accent-cyan)'; // 修正浪 2, 4
+            } else if (displayWave === 'B') {
+                wavePos.style.color = 'var(--accent-yellow)'; // B浪反彈
+            } else {
+                wavePos.style.color = 'var(--accent-down)'; // A, C 浪
+            }
+            
+            // 價格變動描述
+            let priceChangeDesc = '';
+            if (analysis.lastWaveEnd && analysis.priceChangePercent) {
+                const change = parseFloat(analysis.priceChangePercent);
+                if (change > 0) {
+                    priceChangeDesc = `<span style="color: var(--accent-up);">↑${analysis.priceChangePercent}%</span> 自上浪`;
+                } else if (change < 0) {
+                    priceChangeDesc = `<span style="color: var(--accent-down);">↓${Math.abs(change).toFixed(2)}%</span> 自上浪`;
+                }
+            }
+            
+            document.getElementById('currentWaveDesc').innerHTML = `${analysis.trend} | 現價: ${analysis.currentPrice?.toFixed(2) || '--'} ${priceChangeDesc}`;
+            
+            // 更新趨勢
+            const trendEl = document.getElementById('elliottTrend');
+            if (analysis.trend === '上升趨勢') {
+                trendEl.innerHTML = `<span style="color: var(--accent-up);">📈 ${analysis.trend}</span>`;
+            } else if (analysis.trend === '下降趨勢') {
+                trendEl.innerHTML = `<span style="color: var(--accent-down);">📉 ${analysis.trend}</span>`;
+            } else {
+                trendEl.innerHTML = `<span style="color: var(--accent-yellow);">➡️ ${analysis.trend}</span>`;
+            }
+            
+            // 更新費波納契位置（基於當前波浪）
+            document.getElementById('elliottStrength').textContent = `${analysis.waves.length} 個波浪`;
+            
+            // 更新分析內容
+            document.getElementById('elliottAnalysis').innerHTML = generateWaveAnalysisHTML(analysis);
+            
+            // 更新預測
+            document.getElementById('wavePrediction').innerHTML = getWaveAdvice(analysis.currentWave, analysis.trend);
+        }
+        
+        function generateWaveAnalysisHTML(analysis) {
+            let html = '';
+            
+            // 波浪計數視覺化
+            html += `<div style="display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap;">`;
+            [1, 2, 3, 4, 5].forEach(n => {
+                const isCurrent = analysis.currentWave === n;
+                const bgColor = isCurrent ? 'var(--accent-up)' : 'var(--bg-hover)';
+                const textColor = isCurrent ? 'white' : 'var(--text-secondary)';
+                html += `<div style="width: 36px; height: 36px; border-radius: 50%; background: ${bgColor}; color: ${textColor}; display: flex; align-items: center; justify-content: center; font-weight: 600;">${n}</div>`;
+            });
+            ['A', 'B', 'C'].forEach(n => {
+                const isCurrent = analysis.currentWave === n;
+                const bgColor = isCurrent ? 'var(--accent-down)' : 'var(--bg-hover)';
+                const textColor = isCurrent ? 'white' : 'var(--text-secondary)';
+                html += `<div style="width: 36px; height: 36px; border-radius: 50%; background: ${bgColor}; color: ${textColor}; display: flex; align-items: center; justify-content: center; font-weight: 600;">${n}</div>`;
+            });
+            html += `</div>`;
+            
+            // 波浪規則檢查
+            html += `<div style="background: var(--bg-secondary); border-radius: 10px; padding: 15px; margin-bottom: 15px;">`;
+            html += `<h4 style="margin: 0 0 10px 0; font-size: 0.95rem;">📋 波浪規則檢查</h4>`;
+            if (analysis.rules.length > 0) {
+                analysis.rules.forEach(r => {
+                    const icon = r.valid ? '✅' : '❌';
+                    const color = r.valid ? 'var(--accent-up)' : 'var(--accent-down)';
+                    html += `<div style="padding: 5px 0; color: ${color};">${icon} ${r.rule}</div>`;
+                });
+            } else {
+                html += `<p style="color: var(--text-muted);">資料不足，無法完整驗證波浪規則</p>`;
+            }
+            html += `</div>`;
+            
+            // 近期波浪
+            html += `<div style="background: var(--bg-secondary); border-radius: 10px; padding: 15px; margin-bottom: 15px;">`;
+            html += `<h4 style="margin: 0 0 10px 0; font-size: 0.95rem;">📊 近期波浪</h4>`;
+            if (analysis.waves.length > 0) {
+                analysis.waves.slice(-5).forEach((w, i, arr) => {
+                    const isLastWave = i === arr.length - 1;
+                    const bgStyle = isLastWave ? 'background: var(--bg-hover); margin: 0 -8px; padding: 8px; border-radius: 6px;' : '';
+                    const color = w.type === 'up' ? 'var(--accent-up)' : 'var(--accent-down)';
+                    const arrow = w.type === 'up' ? '↑' : '↓';
+                    html += `<div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border-color); ${bgStyle}">
+                        <span>第 ${w.number} 浪 (${w.isImpulse ? '推動' : '修正'})${isLastWave ? ' ← 最近' : ''}</span>
+                        <span style="color: ${color}; font-family: 'JetBrains Mono', monospace;">
+                            ${w.start.toFixed(2)} → ${w.end.toFixed(2)} ${arrow}
+                        </span>
+                    </div>`;
+                });
+                
+                // 現價位
+                if (analysis.lastWaveEnd) {
+                    const changeColor = parseFloat(analysis.priceChangePercent) >= 0 ? 'var(--accent-up)' : 'var(--accent-down)';
+                    const sign = parseFloat(analysis.priceChangePercent) >= 0 ? '+' : '';
+                    html += `<div style="display: flex; justify-content: space-between; padding: 8px 0; margin-top: 5px; border-top: 2px dashed var(--border-color);">
+                        <span style="color: var(--accent-blue); font-weight: 600;">📍 現價位</span>
+                        <span style="font-family: 'JetBrains Mono', monospace;">
+                            ${analysis.lastWaveEnd.toFixed(2)} → <span style="color: var(--accent-blue); font-weight: 600;">${analysis.currentPrice.toFixed(2)}</span>
+                            <span style="color: ${changeColor}; margin-left: 5px;">(${sign}${analysis.priceChangePercent}%)</span>
+                        </span>
+                    </div>`;
+                }
+            } else {
+                html += `<p style="color: var(--text-muted);">波動不足，無法識別明確波浪</p>`;
+            }
+            html += `</div>`;
+            
+            // 最近交易日數據
+            if (analysis.recentDays && analysis.recentDays.length > 0) {
+                html += `<div style="background: var(--bg-secondary); border-radius: 10px; padding: 15px;">`;
+                html += `<h4 style="margin: 0 0 10px 0; font-size: 0.95rem;">📅 最近交易日數據</h4>`;
+                html += `<table style="width: 100%; border-collapse: collapse; font-size: 0.85rem;">`;
+                html += `<thead><tr style="background: var(--bg-hover);">
+                    <th style="padding: 8px; text-align: left;">日期</th>
+                    <th style="padding: 8px; text-align: right;">開盤</th>
+                    <th style="padding: 8px; text-align: right;">最高</th>
+                    <th style="padding: 8px; text-align: right;">最低</th>
+                    <th style="padding: 8px; text-align: right;">收盤</th>
+                </tr></thead><tbody>`;
+                analysis.recentDays.slice().reverse().forEach(d => {
+                    const closeColor = d.close >= d.open ? 'var(--accent-up)' : 'var(--accent-down)';
+                    html += `<tr style="border-bottom: 1px solid var(--border-color);">
+                        <td style="padding: 6px 8px;">${d.date}</td>
+                        <td style="padding: 6px 8px; text-align: right; font-family: 'JetBrains Mono', monospace;">${d.open.toFixed(2)}</td>
+                        <td style="padding: 6px 8px; text-align: right; font-family: 'JetBrains Mono', monospace;">${d.high.toFixed(2)}</td>
+                        <td style="padding: 6px 8px; text-align: right; font-family: 'JetBrains Mono', monospace;">${d.low.toFixed(2)}</td>
+                        <td style="padding: 6px 8px; text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 600; color: ${closeColor};">${d.close.toFixed(2)}</td>
+                    </tr>`;
+                });
+                html += `</tbody></table></div>`;
+            }
+            
+            // 提示
+            html += `<div style="margin-top: 15px; padding: 10px 15px; background: rgba(59, 130, 246, 0.1); border-radius: 8px; font-size: 0.85rem; color: var(--text-secondary);">
+                💡 波浪分析基於<strong>收盤價</strong>識別轉折點。波浪理論為主觀分析工具，建議搭配其他指標綜合判斷。
+            </div>`;
+            
+            return html;
+        }
+        
+        function getWaveAdvice(wave, trend) {
+            const advices = {
+                1: `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-up); font-weight: 600; margin-bottom: 10px;">🚀 第1浪 - 新趨勢起點</p>
+                    <p>第1浪為新趨勢的起點，通常是築底反彈階段。此時市場半信半疑，成交量可能不大。</p>
+                    <p><strong>💡 建議：</strong>可小量試單，設好停損，等待突破確認。</p>
+                </div>`,
+                2: `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 10px;">⏸️ 第2浪 - 回調整理</p>
+                    <p>第2浪為回調整理階段，通常回撤第1浪的 38.2%-61.8%。不會跌破第1浪起點。</p>
+                    <p><strong>💡 建議：</strong>等待回調到支撐位後進場，是較好的買點。</p>
+                </div>`,
+                3: `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-up); font-weight: 600; margin-bottom: 10px;">🔥 第3浪 - 主升段</p>
+                    <p>第3浪通常是最強勁的上漲波段，成交量放大，市場信心增強。絕對不會是最短的推動浪。</p>
+                    <p><strong>💡 建議：</strong>可積極做多，持股續抱，但注意不要追高。</p>
+                </div>`,
+                4: `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-cyan); font-weight: 600; margin-bottom: 10px;">⏸️ 第4浪 - 整理期</p>
+                    <p>第4浪為整理期，通常回撤第3浪的 38.2%。不會與第1浪價格區間重疊。</p>
+                    <p><strong>💡 建議：</strong>逢低布局，等待第5浪的到來。</p>
+                </div>`,
+                5: `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-yellow); font-weight: 600; margin-bottom: 10px;">⚠️ 第5浪 - 末升段</p>
+                    <p>第5浪可能是最後一波上漲，漲幅通常小於第3浪。可能出現量價背離。</p>
+                    <p><strong>💡 建議：</strong>需警惕反轉風險，考慮逐步獲利了結。</p>
+                </div>`,
+                'A': `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-down); font-weight: 600; margin-bottom: 10px;">📉 A浪 - 修正開始</p>
+                    <p>A浪修正開始，多數人認為只是回檔，但實際上趨勢可能已經反轉。</p>
+                    <p><strong>💡 建議：</strong>減碼或觀望，不宜搶反彈。</p>
+                </div>`,
+                'B': `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-yellow); font-weight: 600; margin-bottom: 10px;">🔄 B浪 - 反彈陷阱</p>
+                    <p>B浪反彈通常是陷阱，容易讓人誤以為跌勢結束。成交量通常較A浪小。</p>
+                    <p><strong>💡 建議：</strong>不宜追高，可考慮逢高減碼。</p>
+                </div>`,
+                'C': `<div style="line-height: 1.8;">
+                    <p style="color: var(--accent-down); font-weight: 600; margin-bottom: 10px;">💡 C浪 - 修正末端</p>
+                    <p>C浪修正末端，跌勢可能即將結束。市場悲觀情緒達到高峰。</p>
+                    <p><strong>💡 建議：</strong>可開始留意反彈買點，為新循環做準備。</p>
+                </div>`
+            };
+            
+            return advices[wave] || `<div style="line-height: 1.8;">
+                <p style="color: var(--text-secondary);">目前波浪位置需持續觀察確認。</p>
+                <p><strong>趨勢判斷：</strong>${trend}</p>
+                <p><strong>💡 建議：</strong>等待更明確的訊號出現，結合其他技術指標綜合判斷。</p>
+            </div>`;
+        }
+
+        function drawElliottChart(analysis) {
+            const ctx = document.getElementById('elliottChart').getContext('2d');
+            
+            if (charts.elliottChart) {
+                charts.elliottChart.destroy();
+            }
+            
+            // 使用最近 60 天的數據
+            const recentData = stockData.slice(-60);
+            const labels = recentData.map(d => d.date.substring(5));
+            const prices = recentData.map(d => parseFloat(d.close));
+            
+            // 標記轉折點
+            const pivotHighs = new Array(prices.length).fill(null);
+            const pivotLows = new Array(prices.length).fill(null);
+            
+            // 將 pivots 的 index 對應到 recentData
+            const dataStartIndex = stockData.length - recentData.length;
+            
+            if (analysis.pivots) {
+                analysis.pivots.forEach(p => {
+                    const adjustedIndex = p.index - dataStartIndex;
+                    if (adjustedIndex >= 0 && adjustedIndex < prices.length) {
+                        if (p.type === 'high') {
+                            pivotHighs[adjustedIndex] = p.price;
+                        } else {
+                            pivotLows[adjustedIndex] = p.price;
+                        }
+                    }
+                });
+            }
+            
+            charts.elliottChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: '收盤價',
+                            data: prices,
+                            borderColor: '#3b82f6',
+                            backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.1,
+                            pointRadius: 0
+                        },
+                        {
+                            label: '波浪高點',
+                            data: pivotHighs,
+                            borderColor: 'transparent',
+                            backgroundColor: '#ef4444',
+                            pointRadius: 8,
+                            pointStyle: 'triangle',
+                            showLine: false
+                        },
+                        {
+                            label: '波浪低點',
+                            data: pivotLows,
+                            borderColor: 'transparent',
+                            backgroundColor: '#10b981',
+                            pointRadius: 8,
+                            pointStyle: 'triangle',
+                            rotation: 180,
+                            showLine: false
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: { color: '#94a3b8' }
+                        },
+                        tooltip: {
+                            backgroundColor: '#1a2332',
+                            titleColor: '#f1f5f9',
+                            bodyColor: '#94a3b8'
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: 'rgba(45, 58, 79, 0.5)' },
+                            ticks: { color: '#64748b', maxTicksLimit: 10 }
+                        },
+                        y: {
+                            grid: { color: 'rgba(45, 58, 79, 0.5)' },
+                            ticks: { color: '#64748b' }
+                        }
+                    }
+                }
+            });
+        }
+
+        function calculateFibonacciLevels(analysis) {
+            if (!analysis.prices || analysis.prices.length < 10) return;
+            
+            const prices = analysis.prices;
+            
+            // 找最近的重要高低點
+            let high = Math.max(...prices.slice(-30));
+            let low = Math.min(...prices.slice(-30));
+            
+            const diff = high - low;
+            
+            // 計算費波納契水平
+            const levels = {
+                0: low,
+                236: low + diff * 0.236,
+                382: low + diff * 0.382,
+                50: low + diff * 0.5,
+                618: low + diff * 0.618,
+                786: low + diff * 0.786,
+                100: high,
+                1618: low + diff * 1.618
+            };
+            
+            // 更新顯示
+            document.getElementById('fib0').textContent = levels[0].toFixed(2);
+            document.getElementById('fib236').textContent = levels[236].toFixed(2);
+            document.getElementById('fib382').textContent = levels[382].toFixed(2);
+            document.getElementById('fib50').textContent = levels[50].toFixed(2);
+            document.getElementById('fib618').textContent = levels[618].toFixed(2);
+            document.getElementById('fib786').textContent = levels[786].toFixed(2);
+            document.getElementById('fib100').textContent = levels[100].toFixed(2);
+            document.getElementById('fib1618').textContent = levels[1618].toFixed(2);
+            
+            // 判斷當前價格在哪個區間
+            const currentPrice = analysis.currentPrice;
+            let fibPosition = '';
+            
+            if (currentPrice <= levels[236]) fibPosition = '0% - 23.6%';
+            else if (currentPrice <= levels[382]) fibPosition = '23.6% - 38.2%';
+            else if (currentPrice <= levels[50]) fibPosition = '38.2% - 50%';
+            else if (currentPrice <= levels[618]) fibPosition = '50% - 61.8%';
+            else if (currentPrice <= levels[786]) fibPosition = '61.8% - 78.6%';
+            else if (currentPrice <= levels[100]) fibPosition = '78.6% - 100%';
+            else fibPosition = '> 100% (延伸)';
+            
+            document.getElementById('fibonacciLevel').textContent = fibPosition;
         }
     </script>
 </body>
